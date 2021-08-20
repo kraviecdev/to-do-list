@@ -1,0 +1,9 @@
+.section {
+    background-color: hsl(0, 0%, 100%);
+    margin: 20px auto;
+}
+.section__title {
+    margin: 5px 0;
+    padding: 15px;
+    border-bottom: 2px solid hsl(0, 0%, 87%);
+}

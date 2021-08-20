@@ -1,0 +1,11 @@
+.form {
+    padding: 15px;
+    display: flex;
+    gap: 10px
+}
+
+.form__input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid hsl(0, 0 , 87%);
+}
