@@ -1,7 +1,13 @@
 html {
+    background-color: hsl(0, 0%, 87%);
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 *, ::after, ::before {
     box-sizing: inherit;
+}
+
+.contianer {
+    padding: 20px;
 }

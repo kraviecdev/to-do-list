@@ -54,9 +54,9 @@
     for (const task of tasks) {
       htmlString += `
             <li class="list__item">
-               <button ${task.done ? " class=\"button--done js-doneButton buttton button--complete\"" : "" }class="js-doneButton buttton button--complete">Zrobione</button> 
+               <button ${task.done ? " class=\"button--done js-doneButton buttton button--complete\"" : "" }class="js-doneButton buttton button--complete"><i class="material-icons md-24">task_alt</i></button> 
                ${task.content} 
-               <button class="js-deleteButton button button--delete">Usuń</button>
+               <button class="js-deleteButton button button--delete"><i class="material-icons md-24">delete</i></button>
             </li>
             `
     };
