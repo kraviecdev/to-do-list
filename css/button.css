@@ -1,0 +1,28 @@
+.button {
+    background-color: transparent;
+    border: none;
+}
+
+.button--complete:hover {
+    color: hsl(39, 100%, 50%);
+}
+
+.button--done {
+    align-items: center;
+    background-color: hsl(120, 100%, 25%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 15px;
+}
+
+.button--delete:focus {
+    border: 2px solid hsl(0, 100%, 50%);
+}
+
+.button--delete:hover {
+    background-color: hsl(0, 100%, 50%);
+    color: white;
+}
+
+.button--delete:active {
+    color: hsl(0, 0%, 0%);
+}
