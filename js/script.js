@@ -15,10 +15,8 @@
     render();
   };
 
-  const deleteTask = (newTask) => {
-    tasks.pop({
-      content: newTask,
-    });
+  const removeTask = (index) => {
+    tasks.splice(index, 1);
     render();
   };
 
@@ -42,6 +40,13 @@
             `
     };
     document.querySelector(".js-taskList").innerHTML = htmlString;
+    const removeButtons = document.querySelectorAll(".js-deleteButton");
+
+    removeButtons.forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        removeTask(index);
+      });
+    });
   };
 
   const init = () => {
