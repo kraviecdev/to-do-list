@@ -14,13 +14,10 @@
     border-radius: 15px;
 }
 
-.button--delete:focus {
-    border: 2px solid hsl(0, 100%, 50%);
-}
-
 .button--delete:hover {
     background-color: hsl(0, 100%, 50%);
     color: white;
+    border-radius: 15px;
 }
 
 .button--delete:active {
