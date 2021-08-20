@@ -13,3 +13,9 @@ html {
     padding: 20px;
     max-width: 60%;
 }
+
+@media (max-width: 767px) {
+    .contianer {
+        max-width: 100%;
+    }
+}

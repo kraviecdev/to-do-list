@@ -4,6 +4,12 @@
     gap: 10px
 }
 
+@media (max-width: 767px) {
+    .form {
+        flex-direction: column;
+    }
+}
+
 .form__input {
     padding: 10px;
     width: 100%;
@@ -16,4 +22,5 @@
     color: white;
     border: none;
     min-width: fit-content;
+    padding: 10px;
 }
