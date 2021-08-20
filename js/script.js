@@ -8,6 +8,10 @@
     render();
   };
 
+  const clearPath = () => {
+    document.querySelector(".js-addTask").value = "";
+  }
+
   const removeTask = (taskIndex) => {
     tasks.splice(taskIndex, 1);
     render();
@@ -25,6 +29,7 @@
       return;
     }
     addTask(newTask);
+    clearPath();
   };
 
   const bindEvents = () => {
