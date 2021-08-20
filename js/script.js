@@ -1,12 +1,5 @@
 {
-  const tasks = [
-    {
-      content: "test",
-    },
-    {
-      content: "test22",
-    },
-  ];
+  const tasks = [];
 
   const addTask = (newTask) => {
     tasks.push({
@@ -15,8 +8,13 @@
     render();
   };
 
-  const removeTask = (index) => {
-    tasks.splice(index, 1);
+  const removeTask = (taskIndex) => {
+    tasks.splice(taskIndex, 1);
+    render();
+  };
+
+  const taskDone = (taskIndex) => {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
     render();
   };
 
@@ -29,24 +27,36 @@
     addTask(newTask);
   };
 
+  const bindEvents = () => {
+    const removeButtons = document.querySelectorAll(".js-deleteButton");
+    removeButtons.forEach((deleteButton, taskIndex) => {
+      deleteButton.addEventListener("click", () => {
+        removeTask(taskIndex);
+      });
+    });
+
+    const toggleDoneButtons = document.querySelectorAll(".js-doneButton");
+    toggleDoneButtons.forEach((doneButton, taskIndex) => {
+      doneButton.addEventListener("click", () => {
+        taskDone(taskIndex);
+      });
+    });
+  }
+
   const render = () => {
     let htmlString = "";
 
     for (const task of tasks) {
       htmlString += `
             <li class="list__item">
-               <button class="js-doneButton buttton button--done">Zrobione</button> ${task.content} <button class="js-deleteButton button button--delete">Usuń</button>
+               <button ${task.done ? " class=\"button--done js-doneButton buttton button--complete\"" : "" }class="js-doneButton buttton button--complete">Zrobione</button> 
+               ${task.content} 
+               <button class="js-deleteButton button button--delete">Usuń</button>
             </li>
             `
     };
     document.querySelector(".js-taskList").innerHTML = htmlString;
-    const removeButtons = document.querySelectorAll(".js-deleteButton");
-
-    removeButtons.forEach((deleteButton, index) => {
-      deleteButton.addEventListener("click", () => {
-        removeTask(index);
-      });
-    });
+    bindEvents();
   };
 
   const init = () => {
