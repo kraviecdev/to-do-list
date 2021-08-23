@@ -3,7 +3,7 @@
 - Author: Patryk Krawczyk
 - Created: 20-08-2021
 
-![Screen]()
+![Screen](css/img/to-do-gif.gif)
 
 # Demo
 [Here you find demo](https://patrick36212.github.io/to-do-list/)
@@ -22,4 +22,5 @@ In this project I used tables, objects and arrow functions.
 - HTML
 - BEM
 - CSS
-- JavaScript (arrow functions, table, objects)
+- Flex
+- JS/ES6+
