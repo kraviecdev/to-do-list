@@ -1,14 +1,14 @@
 {
   const tasks = [];
 
-  const addTask = (newTask) => {
+  const addTask = (trimmedTaskContent) => {
     tasks.push({
-      content: newTask,
+      content: trimmedTaskContent,
     });
     render();
   };
 
-  const clearPath = () => {
+  const clearInputValue = () => {
     document.querySelector(".js-addTask").value = "";
   }
 
@@ -24,12 +24,12 @@
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTask = document.querySelector(".js-addTask").value.trim();
-    if (newTask === "") {
+    const trimmedTaskContent = document.querySelector(".js-addTask").value.trim();
+    if (trimmedTaskContent === "") {
       return;
     }
-    addTask(newTask);
-    clearPath();
+    addTask(trimmedTaskContent);
+    clearInputValue();
   };
 
   const bindEvents = () => {
