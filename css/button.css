@@ -3,6 +3,10 @@
     border: none;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .button--complete:hover {
     color: hsl(39, 100%, 50%);
 }
