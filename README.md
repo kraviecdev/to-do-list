@@ -3,7 +3,7 @@
 - Author: Patryk Krawczyk
 - Created: 20-08-2021
 
-![Screen](css/img/to-do-gif.gif)
+![Screen](img/to-do-gif.gif)
 
 # Demo
 [Here you find demo](https://patrick36212.github.io/to-do-list/)
