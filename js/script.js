@@ -10,7 +10,11 @@
 
   const clearInputValue = () => {
     document.querySelector(".js-addTask").value = "";
-  }
+  };
+
+  const inputAutoFocus = () => {
+    document.querySelector(".js-addTask").focus();
+  };
 
   const removeTask = (taskIndex) => {
     tasks.splice(taskIndex, 1);
@@ -30,6 +34,7 @@
     }
     addTask(trimmedTaskContent);
     clearInputValue();
+    inputAutoFocus();
   };
 
   const bindEvents = () => {
