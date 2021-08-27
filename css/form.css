@@ -18,13 +18,16 @@
 }
 
 .form__button {
-    background-color: teal;
+    background-color: hsl(180, 100%, 25%);
     color: white;
     border: none;
     min-width: fit-content;
     padding: 10px;
+    transition: 1s;
 }
 
 .form__button:hover {
     cursor: pointer;
+    transform: scale(1.08);
+    background-color: hsl(180, 100%, 40%);
 }

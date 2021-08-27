@@ -7,15 +7,28 @@
     cursor: pointer;
 }
 
+.button--complete {
+    transition: 1s;
+}
+
 .button--complete:hover {
-    color: hsl(39, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(120, 100%, 35%);
+    border-radius: 15px;
 }
 
 .button--done {
-    align-items: center;
     background-color: hsl(120, 100%, 25%);
     color: hsl(0, 0%, 100%);
     border-radius: 15px;
+}
+
+.button--done:hover {
+    background-color: hsl(120, 100%, 25%);
+}
+
+.button--delete{
+    transition: 1s;
 }
 
 .button--delete:hover {
