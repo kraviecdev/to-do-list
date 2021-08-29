@@ -66,11 +66,11 @@
     });
   }
 
-  const render = () => {
-    let htmlString = "";
+  const renderTasks = () => {
+    let htmlTaskString = "";
 
     for (const task of tasks) {
-      htmlString += `
+      htmlTaskString += `
             <li class="list__item">
                <button ${task.done ? " class=\"button--done js-doneButton button button--complete\"" : ""}class="js-doneButton button button--complete"><i class="material-icons md-24">task_alt</i></button> 
                <span class="list__text">${task.content}</span> 
@@ -78,8 +78,27 @@
             </li>
             `
     };
-    document.querySelector(".js-taskList").innerHTML = htmlString;
+    document.querySelector(".js-taskList").innerHTML = htmlTaskString;
     bindEvents();
+  };
+
+  const renderButtons = () => {
+    let htmlButtonsString = "";
+
+    if (!tasks.lenght) {
+      return
+    }
+    htmlButtonsString += `
+      <button class="button button--selectAll js-selectAllButton"><span class="js-selectButton"></span>wszystkie</button>
+      <button class="button button--hideDone js-hideDoneButton"><span class="js-hideButton"></span>wszystkie</button>
+      `
+    document.querySelector(".js-button").innerHTML = htmlButtonsString;
+    render();
+  };
+
+  const render = () => {
+    renderTasks();
+    renderButtons();
   };
 
   const init = () => {
