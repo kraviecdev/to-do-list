@@ -48,7 +48,8 @@
   };
 
   const toggleHideDoneTasks = () => {
-    hideDoneTasks = !hideDoneTasks;
+    if (tasks.some(({done}) => done)){ 
+    hideDoneTasks = !hideDoneTasks};
     render();
   };
 
@@ -65,10 +66,13 @@
 
   const bindButtonEvents = () => {
     const selectAllButton = document.querySelector(".js-selectAllButton");
-    selectAllButton.addEventListener("click", toggleAllTasksDone);
-
+    if (selectAllButton) {
+      selectAllButton.addEventListener("click", toggleAllTasksDone);
+    }
     const hideDoneButton = document.querySelector(".js-hideDoneButton");
-    hideDoneButton.addEventListener("click", toggleHideDoneTasks)
+    if (hideDoneButton) {
+      hideDoneButton.addEventListener("click", toggleHideDoneTasks);
+    }
   };
 
   const bindTasksEvents = () => {
