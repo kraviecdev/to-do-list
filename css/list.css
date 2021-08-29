@@ -11,6 +11,10 @@
     border-bottom: 1px solid hsl(0, 0%, 87%);
 }
 
+.list__item--hidden {
+    display: none;
+}
+
 .list__text {
     padding: 0 10px;
     display: flex;

@@ -61,6 +61,7 @@
 }
 
 .button--hideDone {
+    min-width: 127px;
     padding: 5px;
     color: hsl(180, 100%, 25%);
     transition: 1s;
