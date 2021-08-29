@@ -39,6 +39,18 @@
     render();
   };
 
+  const toggleAllTasksDone = () => {
+    tasks = tasks.map((task) => ({
+      ...task,
+      done: true,
+    }));
+    render();
+  };
+
+  const toggleDoneTasks = (hideDoneTasks) => {
+    tasks = tasks.filter();
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     const trimmedTaskContent = document.querySelector(".js-addTask").value.trim();
@@ -48,6 +60,16 @@
     addTask(trimmedTaskContent);
     clearInputValue();
     inputAutoFocus();
+  };
+
+  const toggleAllTasksDoneEvent = () => {
+    const selectAllButton = document.querySelector(".js-selectAllButton");
+    selectAllButton.addEventListener("click", toggleAllTasksDone);
+  };
+
+  const toggleHideDoneTasksButtonEvent = () => {
+    const hideDoneButton = document.querySelector(".js-hideDoneButton");
+    hideDoneButton.addEventListener("click", toggleDoneTasks)
   };
 
   const bindTasksEvents = () => {
@@ -87,18 +109,20 @@
 
     if (!tasks.length) {
       return
-    } 
+    }
     else {
       htmlButtonsString += `
             <li class="list__item list__item--button">
-              <button class="button button--selectAll js-selectAllButton">Wykonaj wszystkie</button>
+              <button ${tasks.every(({done}) => done) ? "disabled" : ""} class="button button--selectAll js-selectAllButton">Wykonaj wszystkie</button>
             </li>
             <li class="list__item list__item--button">
-              <button class="button button--hideDone js-hideDoneButton"><span class="js-hideButton">Ukryj</span> wykonane</button>
+              <button class="button button--hideDone js-hideDoneButton"><span class="js-hideButtonInnerText">Ukryj</span> wykonane</button>
             </li>
       `
     };
     document.querySelector(".js-buttons").innerHTML = htmlButtonsString;
+    toggleAllTasksDoneEvent();
+    toggleHideDoneTasksButtonEvent();
   };
 
   const render = () => {

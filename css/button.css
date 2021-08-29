@@ -55,6 +55,11 @@
     color: hsl(0, 0%, 0%);
 }
 
+.button--selectAll:disabled {
+    color: hsl(0, 0%, 85%);
+    cursor: auto;
+}
+
 .button--hideDone {
     padding: 5px;
     color: hsl(180, 100%, 25%);
