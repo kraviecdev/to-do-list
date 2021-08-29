@@ -3,8 +3,26 @@
     margin: 20px auto;
 }
 
+.section__header {
+    border-bottom: 2px solid hsl(0, 0%, 90%);
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .section__header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 .section__title {
     margin: 5px 0;
     padding: 15px;
-    border-bottom: 2px solid hsl(0, 0%, 90%);
+    flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+    .section__title--tasks {
+        border-bottom: 2px solid hsl(0, 0%, 90%);
+    }
 }
