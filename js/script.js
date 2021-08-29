@@ -50,7 +50,7 @@
     inputAutoFocus();
   };
 
-  const bindEvents = () => {
+  const bindTasksEvents = () => {
     const removeButtons = document.querySelectorAll(".js-deleteButton");
     removeButtons.forEach((deleteButton, taskIndex) => {
       deleteButton.addEventListener("click", () => {
@@ -64,7 +64,7 @@
         toggleTaskDone(taskIndex);
       });
     });
-  }
+  };
 
   const renderTasks = () => {
     let htmlTaskString = "";
@@ -73,18 +73,13 @@
       htmlTaskString += `
             <li class="list__item">
                <button ${task.done ? " class=\"button--done js-doneButton button button--complete\"" : ""}class="js-doneButton button button--complete"><i class="material-icons md-24">task_alt</i></button> 
-               <span class="list__text">${task.content}</span> 
+               <span ${task.done ? " class=\"list__text list__text--done\"" : ""}class="list__text">${task.content}</span> 
                <button class="js-deleteButton button button--delete"><i class="material-icons md-24">delete</i></button>
             </li>
             `
     };
     document.querySelector(".js-taskList").innerHTML = htmlTaskString;
-    bindEvents();
-  };
-
-  const selectAllButtonName = () => {
-    document.querySelector(".js-selectAllButton")
-    
+    bindTasksEvents();
   };
 
   const renderButtons = () => {

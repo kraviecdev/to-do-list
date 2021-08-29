@@ -18,6 +18,10 @@
     word-break: break-word;
 }
 
+.list__text--done {
+    text-decoration: line-through;
+}
+
 .section__list--buttons {
     display: flex;
     margin: 5px 0;
