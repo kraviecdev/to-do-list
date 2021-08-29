@@ -24,7 +24,7 @@
 }
 
 .button--done:hover {
-    background-color: hsl(120, 100%, 25%);
+    background-color: hsl(120, 100%, 35%);
 }
 
 .button--delete {
@@ -44,7 +44,7 @@
 .button--selectAll {
     padding: 5px;
     color: hsl(180, 100%, 25%);
-    transition: 1s;
+    transition: hover 1s;
 }
 
 .button--selectAll:hover {
@@ -56,7 +56,7 @@
 }
 
 .button--selectAll:disabled {
-    color: hsl(0, 0%, 85%);
+    color: hsl(0, 0%, 87%);
     cursor: auto;
 }
 
@@ -69,8 +69,4 @@
 
 .button--hideDone:hover {
     color: hsl(180, 100%, 35%);
-}
-
-.button--hideDone:active {
-    color: hsl(0, 0%, 0%)
 }

@@ -20,9 +20,3 @@
     padding: 15px;
     flex-grow: 1;
 }
-
-@media (max-width: 767px) {
-    .section__title--tasks {
-        border-bottom: 2px solid hsl(0, 0%, 90%);
-    }
-}
