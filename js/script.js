@@ -89,7 +89,7 @@
 
   const renderTasks = () => {
     let htmlForTask = task => `
-            <li class="list__item ${task.done && hideDoneTasks ? "list__item--hidden" : "" }">
+            <li class="list__item ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
                <button class="${task.done ? "button--done" : ""} js-doneButton button button--complete"><i class="material-icons md-24">task_alt</i></button> 
                <span class="${task.done ? "list__text--done" : ""} list__text">${task.content}</span> 
                <button class="js-deleteButton button button--delete"><i class="material-icons md-24">delete</i></button>
