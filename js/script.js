@@ -82,18 +82,28 @@
     bindEvents();
   };
 
+  const selectAllButtonName = () => {
+    document.querySelector(".js-selectAllButton")
+    
+  };
+
   const renderButtons = () => {
     let htmlButtonsString = "";
 
-    if (!tasks.lenght) {
+    if (!tasks.length) {
       return
-    }
-    htmlButtonsString += `
-      <button class="button button--selectAll js-selectAllButton"><span class="js-selectButton"></span>wszystkie</button>
-      <button class="button button--hideDone js-hideDoneButton"><span class="js-hideButton"></span>wszystkie</button>
+    } 
+    else {
+      htmlButtonsString += `
+            <li class="list__item list__item--button">
+              <button class="button button--selectAll js-selectAllButton">Wykonaj wszystkie</button>
+            </li>
+            <li class="list__item list__item--button">
+              <button class="button button--hideDone js-hideDoneButton"><span class="js-hideButton">Ukryj</span> wykonane</button>
+            </li>
       `
-    document.querySelector(".js-button").innerHTML = htmlButtonsString;
-    render();
+    };
+    document.querySelector(".js-buttons").innerHTML = htmlButtonsString;
   };
 
   const render = () => {
