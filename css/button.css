@@ -40,33 +40,3 @@
 .button--delete:active {
     color: hsl(0, 0%, 0%);
 }
-
-.button--selectAll {
-    padding: 5px;
-    color: hsl(180, 100%, 25%);
-    transition: hover 1s;
-}
-
-.button--selectAll:hover {
-    color: hsl(180, 100%, 35%);
-}
-
-.button--selectAll:active {
-    color: hsl(0, 0%, 0%);
-}
-
-.button--selectAll:disabled {
-    color: hsl(0, 0%, 87%);
-    cursor: auto;
-}
-
-.button--hideDone {
-    min-width: 127px;
-    padding: 5px;
-    color: hsl(180, 100%, 25%);
-    transition: 1s;
-}
-
-.button--hideDone:hover {
-    color: hsl(180, 100%, 35%);
-}
