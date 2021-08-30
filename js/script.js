@@ -15,7 +15,7 @@
     document.querySelector(".js-addTask").value = "";
   };
 
-  const inputAutoFocus = () => {
+  const setFocusOnInput = () => {
     document.querySelector(".js-addTask").focus();
   };
 
@@ -39,7 +39,7 @@
     render();
   };
 
-  const toggleAllTasksDone = () => {
+  const setAllTasksDone = () => {
     tasks = tasks.map((task) => ({
       ...task,
       done: true,
@@ -61,13 +61,13 @@
     }
     addTask(trimmedTaskContent);
     clearInputValue();
-    inputAutoFocus();
+    setFocusOnInput();
   };
 
   const bindButtonEvents = () => {
     const selectAllButton = document.querySelector(".js-selectAllButton");
     if (selectAllButton) {
-      selectAllButton.addEventListener("click", toggleAllTasksDone);
+      selectAllButton.addEventListener("click", setAllTasksDone);
     }
     const hideDoneButton = document.querySelector(".js-hideDoneButton");
     if (hideDoneButton) {
@@ -92,7 +92,7 @@
   };
 
   const renderTasks = () => {
-    let htmlForTask = task => `
+    let taskToHtml = task => `
             <li class="list__item ${task.done && hideDoneTasks ? "list__item--hidden" : ""}">
                <button class="${task.done ? "button--done" : ""} js-doneButton button button--complete"><i class="material-icons md-24">task_alt</i></button> 
                <span class="${task.done ? "list__text--done" : ""} list__text">${task.content}</span> 
@@ -100,7 +100,7 @@
             </li>
             `
     const tasksList = document.querySelector(".js-taskList");
-    tasksList.innerHTML = tasks.map(htmlForTask).join("");
+    tasksList.innerHTML = tasks.map(taskToHtml).join("");
     bindTasksEvents();
   };
 
@@ -112,12 +112,8 @@
       return;
     }
     buttonsElement.innerHTML = `
-            <li class="list__item list__item--button">
               <button ${tasks.every(({ done }) => done) ? "disabled" : ""} class="button button--selectAll js-selectAllButton">Wykonaj wszystkie</button>
-            </li>
-            <li class="list__item list__item--button">
               <button class="button button--hideDone js-hideDoneButton">${hideDoneTasks ? "Pokaż" : "Ukryj"} wykonane</button>
-            </li>
       `
     bindButtonEvents();
   };
