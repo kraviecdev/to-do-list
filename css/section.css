@@ -63,3 +63,8 @@
 .button--hideDone:hover {
     color: hsl(180, 100%, 35%);
 }
+
+.button--hideDone:disabled {
+    color: hsl(0, 0%, 87%);
+    cursor: auto;
+}

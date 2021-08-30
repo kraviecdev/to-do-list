@@ -113,7 +113,7 @@
     }
     buttonsElement.innerHTML = `
               <button ${tasks.every(({ done }) => done) ? "disabled" : ""} class="button button--selectAll js-selectAllButton">Wykonaj wszystkie</button>
-              <button class="button button--hideDone js-hideDoneButton">${hideDoneTasks ? "Pokaż" : "Ukryj"} wykonane</button>
+              <button ${(tasks.some(({done}) => done)) ? "" : "disabled"} class="button button--hideDone js-hideDoneButton">${hideDoneTasks ? "Pokaż" : "Ukryj"} wykonane</button>
       `
     bindButtonEvents();
   };
