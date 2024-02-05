@@ -7,7 +7,7 @@
 ![Screen](img/to-do-gif.gif)
 
 # Demo
-[Here you find demo](https://patrick36212.github.io/to-do-list/)
+[Here you find demo](kraviecdev.github.io/to-do-list/)
 # Description
 This project allows to make shopping list, activities list etc.
 In this project I used tables, objects and arrow functions.
